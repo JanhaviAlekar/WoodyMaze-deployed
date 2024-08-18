@@ -6,9 +6,10 @@ import { Checkbox, Radio } from 'antd';
 import { Prices } from '../components/prices';
 import { ShimmerCard } from '../components/shimmer';
 import { useCart } from '../context/cart';
+import { Link } from 'react-router-dom';
 
 const ProductsPage = () => {
-    const [cart, setCart] = useCart();
+    const { cart, addToCart } = useCart();
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [checked, setChecked] = useState([]);
@@ -170,13 +171,16 @@ const ProductsPage = () => {
                                             </div>
                                             <div className="last-section">
                                                 <div className="last-div">
-                                                    <i className="fa fa-shopping-cart"></i>
-                                                    <i className="fa-solid fa-icon2 fa-comment-dots"></i>
+                                                    <Link to='/cart'>
+                                                        <i className="fa fa-shopping-cart"></i>
+                                                    </Link>
+                                                    <Link to={`/product/${p.slug}`}>
+                                                        <i className="fa-solid fa-icon2 fa-comment-dots"></i>
+                                                    </Link>
                                                 </div>
                                                 <div className="buttons">
                                                     <button onClick={() => {
-                                                        setCart([...cart, p]);
-                                                        localStorage.setItem('cart', JSON.stringify([...cart, p]));
+                                                        addToCart(p);
                                                         toast.success('Item added to cart');
                                                     }}>Add to cart</button>
                                                 </div>

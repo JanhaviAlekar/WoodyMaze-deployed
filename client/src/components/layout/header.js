@@ -9,7 +9,7 @@ import { useCart } from '../../context/cart';
 
 const Header = () => {
     const [auth, setAuth] = useAuth()
-    const [cart] = useCart();
+    const {cart} = useCart();
     const categories = useCategory()
     const handleLogout = () => {
         setAuth({
