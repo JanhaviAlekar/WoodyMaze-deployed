@@ -43,14 +43,16 @@ const Header = () => {
 
 
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0"> {/* Add ms-auto class to align the <ul> to the right */}
-                            <div className="me-2">
-                                <SearchInput />
-                            </div>
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link">
                                     Home
                                 </NavLink>
                             </li>
+                            <div className="me-2">
+                            <NavLink to="/products" className="nav-link">
+                                    Products
+                                </NavLink>
+                            </div>
                             {!auth.user ? (
                                 <>
                                     <li className="nav-item">

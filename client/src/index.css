@@ -161,6 +161,74 @@
   color: #fff;
   text-decoration: none;
 }
+/*shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-wrapper {
+  width: 310px;
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.shimmer-card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shimmer-top {
+  height: 200px;
+  background-color: #e0e0e0;
+}
+
+.shimmer-text {
+  height: 20px;
+  width: 60%;
+  background-color: #e0e0e0;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.shimmer-text.small {
+  width: 40%;
+}
+
+.shimmer-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.shimmer-button {
+  height: 30px;
+  width: 100px;
+  background-color: #e0e0e0;
+  border-radius: 7px;
+}
+
 /* card */
 .container-card{
 
@@ -215,7 +283,7 @@
 }
 .top-div span{
   height:28px;
-  width:60px;
+  width:120px;
   background-color:#048067;
   color:#fff;
   position:absolute;
@@ -271,6 +339,8 @@
   background-color:#048067;
 
 }
+
+
 .filter{
   font-family: 'Poppins', serif;
   font-size: 17px;
